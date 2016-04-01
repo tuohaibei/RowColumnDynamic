@@ -7,7 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Serialization;
 using System.Web.Script.Serialization;
 //***************************************************************************************
-//编制人:崔彬玉
+//编制人:**
 //编制时间：2015-09-15
 //编制作用：序列化对象帮助类
 //编制单位：TCL通讯
