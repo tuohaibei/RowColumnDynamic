@@ -1,0 +1,15 @@
+E:\Resource\TCL.Resources\TCL.Resources\bin\TCL.Resources.dll.config
+E:\Resource\TCL.Resources\TCL.Resources\bin\TCL.Resources.dll
+E:\Resource\TCL.Resources\TCL.Resources\bin\TCL.Resources.pdb
+E:\Resource\TCL.Resources\TCL.Resources\obj\Debug\TCL.Resources.csprojResolveAssemblyReference.cache
+E:\Resource\TCL.Resources\TCL.Resources\obj\Debug\TCL.Resources.dll
+E:\Resource\TCL.Resources\TCL.Resources\obj\Debug\TCL.Resources.pdb
+F:\Resource\TCL.Resources\TCL.Resources\bin\TCL.Resources.dll.config
+F:\Resource\TCL.Resources\TCL.Resources\bin\TCL.Resources.dll
+F:\Resource\TCL.Resources\TCL.Resources\bin\TCL.Resources.pdb
+F:\Resource\TCL.Resources\TCL.Resources\bin\Mirabeau.MsSql.Library.dll
+F:\Resource\TCL.Resources\TCL.Resources\bin\Mirabeau.Sql.Library.dll
+F:\Resource\TCL.Resources\TCL.Resources\bin\Mirabeau.Sql.Library.xml
+F:\Resource\TCL.Resources\TCL.Resources\obj\Debug\TCL.Resources.csprojResolveAssemblyReference.cache
+F:\Resource\TCL.Resources\TCL.Resources\obj\Debug\TCL.Resources.dll
+F:\Resource\TCL.Resources\TCL.Resources\obj\Debug\TCL.Resources.pdb

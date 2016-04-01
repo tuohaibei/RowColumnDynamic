@@ -1,0 +1,11 @@
+F:\resource_plan\trunk\TCL.Resources\TCL.Resources.BLL\bin\TCL.Resources.BLL.dll
+F:\resource_plan\trunk\TCL.Resources\TCL.Resources.BLL\bin\TCL.Resources.BLL.pdb
+F:\resource_plan\trunk\TCL.Resources\TCL.Resources.BLL\bin\TCL.Resources.Common.dll
+F:\resource_plan\trunk\TCL.Resources\TCL.Resources.BLL\bin\TCL.Resources.DAL.dll
+F:\resource_plan\trunk\TCL.Resources\TCL.Resources.BLL\bin\TCL.Resources.Entity.dll
+F:\resource_plan\trunk\TCL.Resources\TCL.Resources.BLL\bin\TCL.Resources.Common.pdb
+F:\resource_plan\trunk\TCL.Resources\TCL.Resources.BLL\bin\TCL.Resources.DAL.pdb
+F:\resource_plan\trunk\TCL.Resources\TCL.Resources.BLL\bin\TCL.Resources.Entity.pdb
+F:\resource_plan\trunk\TCL.Resources\TCL.Resources.BLL\obj\Release\TCL.Resources.BLL.csprojResolveAssemblyReference.cache
+F:\resource_plan\trunk\TCL.Resources\TCL.Resources.BLL\obj\Release\TCL.Resources.BLL.dll
+F:\resource_plan\trunk\TCL.Resources\TCL.Resources.BLL\obj\Release\TCL.Resources.BLL.pdb

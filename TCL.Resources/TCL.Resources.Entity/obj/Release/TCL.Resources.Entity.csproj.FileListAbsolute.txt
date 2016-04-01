@@ -1,0 +1,7 @@
+F:\resource_plan\trunk\TCL.Resources\TCL.Resources.Entity\bin\TCL.Resources.Entity.dll
+F:\resource_plan\trunk\TCL.Resources\TCL.Resources.Entity\bin\TCL.Resources.Entity.pdb
+F:\resource_plan\trunk\TCL.Resources\TCL.Resources.Entity\bin\EntityFramework.dll
+F:\resource_plan\trunk\TCL.Resources\TCL.Resources.Entity\bin\EntityFramework.xml
+F:\resource_plan\trunk\TCL.Resources\TCL.Resources.Entity\bin\zh-Hans\EntityFramework.resources.dll
+F:\resource_plan\trunk\TCL.Resources\TCL.Resources.Entity\obj\Release\TCL.Resources.Entity.dll
+F:\resource_plan\trunk\TCL.Resources\TCL.Resources.Entity\obj\Release\TCL.Resources.Entity.pdb

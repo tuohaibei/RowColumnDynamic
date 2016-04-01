@@ -1,0 +1,2580 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mirabeau.Sql.Library</name>
+    </assembly>
+    <members>
+        <member name="T:Mirabeau.Sql.Library.IDatabaseHelper">
+            <summary>
+            Interface for the database helper class.
+            </summary>
+        </member>
+        <member name="P:Mirabeau.Sql.Library.IDatabaseHelper.CommandTimeout">
+            <summary>
+            Gets or sets the command timeout property. Default value is read from config.
+            </summary>
+            <value>
+            The command timeout.
+            </value>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteNonQuery(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns no resultset and takes no parameters) against the database specified in 
+            the connection string
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders");
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteNonQueryAsync(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand asynchronous (that returns no resultset and takes no parameters) against the database specified in 
+            the connection string
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;int&gt; result = ExecuteNonQueryAsync(connString, CommandType.StoredProcedure, "PublishOrders");
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteNonQuery``1(System.String,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the database specified in the connection string 
+            using the provided parameters
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteNonQueryAsync``1(System.String,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the database specified in the connection string 
+            using the provided parameters
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;int&gt; result = ExecuteNonQueryAsync(connString, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteNonQuery``1(System.String,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the database specified in the connection string 
+            using the provided parameters
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteNonQueryAsync``1(System.String,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the database specified in the connection string 
+            using the provided parameters
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;int&gt; result = ExecuteNonQueryAsync(connString, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteNonQuery(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns no resultset and takes no parameters) against the provided DbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(conn, CommandType.StoredProcedure, "PublishOrders");
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteNonQueryAsync(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns no resultset and takes no parameters) against the provided DbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;int&gt; result = ExecuteNonQueryAsync(conn, CommandType.StoredProcedure, "PublishOrders");
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteNonQuery``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(conn, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteNonQueryAsync``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;int&gt; result = ExecuteNonQueryAsync(conn, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteNonQuery``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(conn, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteNonQueryAsync``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;int&gt; result = ExecuteNonQueryAsync(conn, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteNonQuery(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns no resultset and takes no parameters) against the provided DbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(trans, CommandType.StoredProcedure, "PublishOrders");
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteNonQueryAsync(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns no resultset and takes no parameters) against the provided DbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;int&gt; result = ExecuteNonQueryAsync(trans, CommandType.StoredProcedure, "PublishOrders");
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteNonQuery``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteNonQueryAsync``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;int&gt; result = ExecuteNonQueryAsync(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteNonQuery``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteNonQueryAsync``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;int&gt; result = ExecuteNonQueryAsync(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteDataSet(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a resultset and takes no parameters) against the database specified in 
+            the connection string. 
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(connString, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>A dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteDataSet``1(System.String,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(connString, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteDataSet``1(System.String,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(connString, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteDataSet(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided DbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(conn, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>A dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteDataSet``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(conn, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteDataSet``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(conn, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteDataSet(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided DbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(trans, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>A dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteDataSet``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteDataSet``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteReader``1(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a resultset and takes no parameters) against the database specified in 
+            the connection string. 
+            </summary>
+            <remarks>
+            e.g.:  
+             DbDataReader dr = ExecuteReader(connString, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteReaderAsync``1(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a resultset and takes no parameters) against the database specified in 
+            the connection string. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;DbDataReader&gt; result = ExecuteReaderAsync(connString, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteReader``2(System.String,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DbDataReader dr = ExecuteReader(connString, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteReaderAsync``2(System.String,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;DbDataReader&gt; result = ExecuteReaderAsync(connString, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteReader``2(System.String,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DbDataReader dr = ExecuteReader(connString, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteReaderAsync``2(System.String,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;DbDataReader&gt; result = ExecuteReaderAsync(connString, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteReader``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided DbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             DbDataReader dr = ExecuteReader(conn, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteReaderAsync``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided DbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;DbDataReader&gt; result = ExecuteReaderAsync(conn, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteReader``2(System.Data.Common.DbConnection,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DbDataReader dr = ExecuteReader(conn, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteReaderAsync``2(System.Data.Common.DbConnection,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;DbDataReader&gt; result = ExecuteReaderAsync(conn, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteReader``2(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DbDataReader dr = ExecuteReader(conn, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteReaderAsync``2(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;DbDataReader&gt; result = ExecuteReaderAsync(conn, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteReader``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided DbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             DbDataReader dr = ExecuteReader(trans, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteReaderAsync``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided DbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;DbDataReader&gt; result = ExecuteReaderAsync(trans, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteReader``2(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+              DbDataReader dr = ExecuteReader(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteReaderAsync``2(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+              Task&lt;DbDataReader&gt; result = ExecuteReaderAsync(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteReader``2(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+              DbDataReader dr = ExecuteReader(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteReaderAsync``2(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+              Task&lt;DbDataReader&gt; result = ExecuteReaderAsync(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalar(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the database specified in 
+            the connection string. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(connString, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalar``1(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the database specified in 
+            the connection string. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = ExecuteScalar&lt;int&gt;(connString, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalarAsync(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the database specified in 
+            the connection string. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;object&gt; orderCount = ExecuteScalarAsync(connString, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalar``1(System.String,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(connString, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalar``2(System.String,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = ExecuteScalar&lt;int&gt;(connString, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalarAsync``1(System.String,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;object&gt; orderCount = ExecuteScalarAsync(connString, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalarAsync``2(System.String,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;{T}&gt; orderCount = ExecuteScalarAsync&lt;{T}&gt;(connString, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalar``1(System.String,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(connString, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalar``2(System.String,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = ExecuteScalar&lt;int&gt;(connString, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalarAsync``1(System.String,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;object&gt; orderCount = ExecuteScalarAsync(connString, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalarAsync``2(System.String,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;T&gt; orderCount = ExecuteScalarAsync&lt;T&gt;(connString, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalar(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the provided DbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(conn, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalar``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the provided DbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = ExecuteScalar&lt;int&gt;(conn, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalarAsync(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the provided DbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;object&gt; orderCount = ExecuteScalarAsync(conn, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalarAsync``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the provided DbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;{T}&gt; orderCount = ExecuteScalarAsync&lt;{T}&gt;(conn, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalar``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(conn, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalar``2(System.Data.Common.DbConnection,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = ExecuteScalar&lt;int&gt;(conn, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalarAsync``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;object&gt; orderCount = ExecuteScalarAsync(conn, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalarAsync``2(System.Data.Common.DbConnection,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;{T}&gt; orderCount = ExecuteScalarAsync&lt;{T}&gt;(conn, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalar``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(conn, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalar``2(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar&lt;int&gt;(conn, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalarAsync``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;object&gt; orderCount = ExecuteScalarAsync(conn, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalarAsync``2(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;{T}&gt; orderCount = ExecuteScalarAsync&lt;{T}&gt;(conn, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalar(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the provided DbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = ExecuteScalar&lt;int&gt;(trans, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalar``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the provided DbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = ExecuteScalar&lt;int&gt;(trans, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalarAsync(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the provided DbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;object&gt; orderCount = ExecuteScalarAsync(trans, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalarAsync``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the provided DbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;{T}&gt; orderCount = ExecuteScalarAsync&lt;{T}&gt;(trans, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalar``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(trans, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalar``2(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = ExecuteScalar&lt;int&gt;(trans, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalarAsync``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;object&gt; orderCount = ExecuteScalarAsync(trans, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalarAsync``2(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;{T}&gt; orderCount = ExecuteScalarAsync&lt;{T}&gt;(trans, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalar``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(trans, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalar``2(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = ExecuteScalar&lt;int&gt;(trans, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalarAsync``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;object&gt; orderCount = ExecuteScalarAsync(trans, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.ExecuteScalarAsync``2(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;{T}&gt; orderCount = ExecuteScalarAsync&lt;{T}&gt;(trans, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.CreateConnection(System.String)">
+            <summary>
+            Creates a new DbConnection.
+            </summary>
+            <param name="connectionString">The connection string to the database.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.CreateCommand">
+            <summary>
+            Creates a new DbCommand.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.IDatabaseHelper.CreateDataAdapter(System.Data.Common.DbCommand)">
+            <summary>
+            Creates a new DbDataAdapter.
+            </summary>
+            <param name="command">the <see cref="T:System.Data.Common.DbCommand"/>.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Mirabeau.Sql.Library.ParameterFactory`1">
+            <summary>
+            Factory for creating <see cref="T:System.Data.Common.DbParameter"/>s.
+            </summary>
+            <typeparam name="T">The type of <see cref="T:System.Data.Common.DbParameter"/>.</typeparam>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.ParameterFactory`1.CreateParameter(System.Object,System.String,System.Data.ParameterDirection)">
+            <summary>
+            Creates the parameter.
+            </summary>
+            <param name="theValue">The value.</param>
+            <param name="parameterName">Name of the parameter.</param>
+            <param name="direction">The direction of the parameter.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Mirabeau.Sql.Library.DatabaseHelperBase">
+            <summary>
+            The SqlHelper class is intended to encapsulate high performance, scalable best practices for common uses of SqlClient.
+            </summary>
+            <remarks>
+            In the AppSettings there is an option to set the value of the SqlCommandTimeout, to change the default SQL timeout.
+            </remarks>
+        </member>
+        <member name="P:Mirabeau.Sql.Library.DatabaseHelperBase.TimeoutHasBeenDetermined">
+            <summary>
+            Gets or sets a value indicating whether we've read the command-timeout value from the config file.
+            This makes sure we only read the config once.
+            </summary>
+            <value>
+            <c>true</c> if command-timeout value was read from config; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Mirabeau.Sql.Library.DatabaseHelperBase.CommandTimeout">
+            <summary>
+            Gets or sets the command timeout property. Default value is read from config.
+            </summary>
+            <value>
+            The command timeout.
+            </value>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteNonQuery(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns no resultset and takes no parameters) against the database specified in 
+            the connection string
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders");
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteNonQueryAsync(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand asynchronous (that returns no resultset and takes no parameters) against the database specified in 
+            the connection string
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;int&gt; result = ExecuteNonQueryAsync(connString, CommandType.StoredProcedure, "PublishOrders");
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteNonQuery``1(System.String,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the database specified in the connection string 
+            using the provided parameters
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteNonQueryAsync``1(System.String,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the database specified in the connection string 
+            using the provided parameters
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;int&gt; result = ExecuteNonQueryAsync(connString, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteNonQuery``1(System.String,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the database specified in the connection string 
+            using the provided parameters
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteNonQueryAsync``1(System.String,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the database specified in the connection string 
+            using the provided parameters
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;int&gt; result = ExecuteNonQueryAsync(connString, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteNonQuery(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns no resultset and takes no parameters) against the provided DbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(conn, CommandType.StoredProcedure, "PublishOrders");
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteNonQueryAsync(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns no resultset and takes no parameters) against the provided DbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;int&gt; result = ExecuteNonQueryAsync(conn, CommandType.StoredProcedure, "PublishOrders");
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteNonQuery``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(conn, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteNonQueryAsync``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;int&gt; result = ExecuteNonQueryAsync(conn, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteNonQuery``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(conn, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteNonQueryAsync``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;int&gt; result = ExecuteNonQueryAsync(conn, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteNonQuery(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns no resultset and takes no parameters) against the provided DbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(trans, CommandType.StoredProcedure, "PublishOrders");
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteNonQueryAsync(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns no resultset and takes no parameters) against the provided DbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;int&gt; result = ExecuteNonQueryAsync(trans, CommandType.StoredProcedure, "PublishOrders");
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteNonQuery``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteNonQueryAsync``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;int&gt; result = ExecuteNonQueryAsync(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteNonQuery``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteNonQueryAsync``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;int&gt; result = ExecuteNonQueryAsync(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteDataSet(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a resultset and takes no parameters) against the database specified in 
+            the connection string. 
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(connString, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>A dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteDataSet``1(System.String,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(connString, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteDataSet``1(System.String,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(connString, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteDataSet(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided DbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(conn, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>A dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteDataSet``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(conn, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteDataSet``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(conn, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteDataSet(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided DbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(trans, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>A dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteDataSet``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteDataSet``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteReaderAsync``2(System.Data.Common.DbConnection,System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1},Mirabeau.Sql.Library.DatabaseHelperBase.SqlConnectionOwnership)">
+            <summary>
+            Create and prepare a SqlCommand, and call ExecuteReaderAsync with the appropriate CommandBehavior.
+            </summary>
+            <remarks>
+            If we created and opened the connection, we want the connection to be closed when the DataReader is closed.
+            If the caller provided the connection, we want to leave it to them to manage.
+            </remarks>
+            <param name="connection">A valid DbConnection, on which to execute this command</param>
+            <param name="transaction">A valid DbTransaction, or 'null'</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters to be associated with the command or 'null' if no parameters are required</param>
+            <param name="connectionOwnership">Indicates whether the connection parameter was provided by the caller, or created by SqlHelper</param>
+            <returns>DbDataReader containing the results of the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteReader``1(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a resultset and takes no parameters) against the database specified in 
+            the connection string. 
+            </summary>
+            <remarks>
+            e.g.:  
+             DbDataReader dr = ExecuteReader(connString, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteReaderAsync``1(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a resultset and takes no parameters) against the database specified in 
+            the connection string. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;DbDataReader&gt; result = ExecuteReaderAsync(connString, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteReader``2(System.String,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DbDataReader dr = ExecuteReader(connString, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteReaderAsync``2(System.String,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;DbDataReader&gt; result = ExecuteReaderAsync(connString, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteReader``2(System.String,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DbDataReader dr = ExecuteReader(connString, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteReaderAsync``2(System.String,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;DbDataReader&gt; result = ExecuteReaderAsync(connString, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteReader``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided DbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             DbDataReader dr = ExecuteReader(conn, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteReaderAsync``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided DbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;DbDataReader&gt; result = ExecuteReaderAsync(conn, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteReader``2(System.Data.Common.DbConnection,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DbDataReader dr = ExecuteReader(conn, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteReaderAsync``2(System.Data.Common.DbConnection,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;DbDataReader&gt; result = ExecuteReaderAsync(conn, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteReader``2(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DbDataReader dr = ExecuteReader(conn, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteReaderAsync``2(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;DbDataReader&gt; result = ExecuteReaderAsync(conn, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteReader``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided DbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             DbDataReader dr = ExecuteReader(trans, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteReaderAsync``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided DbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;DbDataReader&gt; result = ExecuteReaderAsync(trans, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteReader``2(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+              DbDataReader dr = ExecuteReader(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteReaderAsync``2(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+              Task&lt;DbDataReader&gt; result = ExecuteReaderAsync(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteReader``2(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+              DbDataReader dr = ExecuteReader(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteReaderAsync``2(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+              Task&lt;DbDataReader&gt; result = ExecuteReaderAsync(trans, CommandType.StoredProcedure, "GetOrders", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>A DbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="T:Mirabeau.Sql.Library.DatabaseHelperBase.SqlConnectionOwnership">
+            <summary>
+            This enum is used to indicate whether the connection was provided by the caller, or created by SqlHelper, so that
+            we can set the appropriate CommandBehavior when calling ExecuteReader()
+            </summary>
+        </member>
+        <member name="F:Mirabeau.Sql.Library.DatabaseHelperBase.SqlConnectionOwnership.Internal">
+            <summary>Connection is owned and managed by SqlHelper</summary>
+        </member>
+        <member name="F:Mirabeau.Sql.Library.DatabaseHelperBase.SqlConnectionOwnership.External">
+            <summary>Connection is owned and managed by the caller</summary>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalar(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the database specified in 
+            the connection string. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(connString, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalar``1(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the database specified in 
+            the connection string. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = ExecuteScalar&lt;int&gt;(connString, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalarAsync(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the database specified in 
+            the connection string. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;object&gt; orderCount = ExecuteScalarAsync(connString, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalar``1(System.String,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(connString, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalar``2(System.String,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = ExecuteScalar&lt;int&gt;(connString, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalarAsync``1(System.String,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;object&gt; orderCount = ExecuteScalarAsync(connString, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalarAsync``2(System.String,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;{T}&gt; orderCount = ExecuteScalarAsync&lt;{T}&gt;(connString, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalar``1(System.String,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(connString, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalar``2(System.String,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = ExecuteScalar&lt;int&gt;(connString, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalarAsync``1(System.String,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;object&gt; orderCount = ExecuteScalarAsync(connString, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalarAsync``2(System.String,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;T&gt; orderCount = ExecuteScalarAsync&lt;T&gt;(connString, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connectionString">A valid connection string for a DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalar(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the provided DbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(conn, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalar``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the provided DbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = ExecuteScalar&lt;int&gt;(conn, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalarAsync(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the provided DbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;object&gt; orderCount = ExecuteScalarAsync(conn, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalarAsync``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the provided DbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;{T}&gt; orderCount = ExecuteScalarAsync&lt;{T}&gt;(conn, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalar``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(conn, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalar``2(System.Data.Common.DbConnection,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = ExecuteScalar&lt;int&gt;(conn, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalarAsync``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;object&gt; orderCount = ExecuteScalarAsync(conn, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalarAsync``2(System.Data.Common.DbConnection,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;{T}&gt; orderCount = ExecuteScalarAsync&lt;{T}&gt;(conn, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalar``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(conn, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalar``2(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar&lt;int&gt;(conn, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalarAsync``1(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;object&gt; orderCount = ExecuteScalarAsync(conn, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalarAsync``2(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;{T}&gt; orderCount = ExecuteScalarAsync&lt;{T}&gt;(conn, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="connection">A valid DbConnection</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalar(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the provided DbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = ExecuteScalar&lt;int&gt;(trans, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalar``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the provided DbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = ExecuteScalar&lt;int&gt;(trans, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalarAsync(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the provided DbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;object&gt; orderCount = ExecuteScalarAsync(trans, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalarAsync``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the provided DbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;{T}&gt; orderCount = ExecuteScalarAsync&lt;{T}&gt;(trans, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalar``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(trans, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalar``2(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = ExecuteScalar&lt;int&gt;(trans, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalarAsync``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,``0[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;object&gt; orderCount = ExecuteScalarAsync(trans, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalarAsync``2(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,``1[])">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;{T}&gt; orderCount = ExecuteScalarAsync&lt;{T}&gt;(trans, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalar``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(trans, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalar``2(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = ExecuteScalar&lt;int&gt;(trans, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalarAsync``1(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;object&gt; orderCount = ExecuteScalarAsync(trans, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.ExecuteScalarAsync``2(System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Execute a SqlCommand (that returns a 1x1 resultset) against the specified DbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Task&lt;{T}&gt; orderCount = ExecuteScalarAsync&lt;{T}&gt;(trans, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@productId", 24));
+            </remarks>
+            <param name="transaction">A valid DbTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters used to execute the command</param>
+            <returns>An object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.AttachParameters``1(System.Data.Common.DbCommand,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            This method is used to attach array of DbParameters to a SqlCommand.
+            This method will assign a value of DBNull to any parameter with a direction of
+            InputOutput and a value of null.
+            This behavior will prevent default values from being used, but
+            this will be the less common case than an intended pure output parameter (derived as InputOutput)
+            where the user provided no input value.
+            </summary>
+            <param name="command">
+            The command to which the parameters will be added
+            </param>
+            <param name="commandParameters">
+            An array of DbParameters to be added to command
+            </param>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.AssignParameterValues(System.Collections.Generic.IList{System.Data.SqlClient.SqlParameter},System.Collections.Generic.IList{System.Object})">
+            <summary>
+            This method assigns an array of values to an array of DbParameters
+            </summary>
+            <param name="commandParameters">Array of DbParameters to be assigned values</param>
+            <param name="parameterValues">Array of objects holding the values to be assigned</param>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.PrepareCommandAsync``1(System.Data.Common.DbCommand,System.Data.Common.DbConnection,System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            This method opens (if necessary) and assigns a connection, transaction, command type and parameters 
+            to the provided command
+            </summary>
+            <param name="command">The SqlCommand to be prepared</param>
+            <param name="connection">A valid DbConnection, on which to execute this command</param>
+            <param name="transaction">A valid DbTransaction, or 'null'</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name or T-SQL command</param>
+            <param name="commandParameters">An array of DbParameters to be associated with the command or 'null' if no parameters are required</param>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.GetCommandTimeout">
+            <summary>
+            Reads the 'SqlCommandTimeout' from the appsettings section of the config file.
+            If it exits it will try to convert it to an integer and will be set as CommandTimeout.
+            Otherwise the default value will be set.
+            </summary>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.CreateConnection(System.String)">
+            <summary>
+            Creates a new DbConnection.
+            </summary>
+            <param name="connectionString">The connection string to the database.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.CreateCommand">
+            <summary>
+            Creates a new DbCommand.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DatabaseHelperBase.CreateDataAdapter(System.Data.Common.DbCommand)">
+            <summary>
+            Creates a new DbDataAdapter.
+            </summary>
+            <param name="command">the <see cref="T:System.Data.Common.DbCommand"/>.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Mirabeau.Sql.Library.DbDataReaderHelper">
+            <summary>
+            Helper for the DatabaseDataReader object.
+            </summary>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DbDataReaderHelper.GetDbValueOrDefaultForValueType``1(System.Object)">
+            <summary>
+            Return a non nullable value of type &lt;T&gt;
+            </summary>
+            <param name="theValue">The value.</param>
+            <typeparam name="T">The type.</typeparam>
+            <returns>The <see cref="!:T"/>.</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DbDataReaderHelper.GetDbValueForNullableValueType``1(System.Object)">
+            <summary>
+            Return a nullable value of type &lt;T&gt;
+            </summary>
+            <param name="theValue">The value.</param>
+            <typeparam name="T">The type.</typeparam>
+            <returns>The nullable <see cref="!:T"/>.</returns>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.DbDataReaderHelper.GetDbValueOrNullForReferenceType``1(System.Object)">
+            <summary>
+            Return a nullable value of type &lt;T&gt;
+            </summary>
+            <param name="theValue">The value.</param>
+            <typeparam name="T">The type.</typeparam>
+            <returns>The <see cref="!:T"/></returns>
+        </member>
+        <member name="T:Mirabeau.Sql.Library.String_Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Mirabeau.Sql.Library.String_Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Mirabeau.Sql.Library.String_Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Mirabeau.Sql.Library.String_Resources.CannotbeNull">
+            <summary>
+              Looks up a localized string similar to cannot be null.
+            </summary>
+        </member>
+        <member name="P:Mirabeau.Sql.Library.String_Resources.CannotbeNullOrEmpty">
+            <summary>
+              Looks up a localized string similar to cannot be null or empty.
+            </summary>
+        </member>
+        <member name="P:Mirabeau.Sql.Library.String_Resources.errorCodeFormatString">
+            <summary>
+              Looks up a localized string similar to [Errorcode: {0}] {1}.
+            </summary>
+        </member>
+        <member name="P:Mirabeau.Sql.Library.String_Resources.NoErrorCodePresent">
+            <summary>
+              Looks up a localized string similar to No errorcode available for errorcode: {0}..
+            </summary>
+        </member>
+        <member name="P:Mirabeau.Sql.Library.String_Resources.ParameterCannotBeNull">
+            <summary>
+              Looks up a localized string similar to Parameter {0} cannot be null..
+            </summary>
+        </member>
+        <member name="P:Mirabeau.Sql.Library.String_Resources.ParameterCountDoesNotMatch">
+            <summary>
+              Looks up a localized string similar to Parameter count does not match Parameter Value count..
+            </summary>
+        </member>
+        <member name="P:Mirabeau.Sql.Library.String_Resources.RequiredAssemblyNotFound">
+            <summary>
+              Looks up a localized string similar to Required version of assembly {0} is {1}. Found verions is {2}..
+            </summary>
+        </member>
+        <member name="P:Mirabeau.Sql.Library.String_Resources.WrongFormat">
+            <summary>
+              Looks up a localized string similar to Wrong format: {0}.
+            </summary>
+        </member>
+        <member name="T:Mirabeau.Sql.Library.StringExtensions">
+            <summary>
+            Extentions for string.
+            </summary>
+        </member>
+        <member name="M:Mirabeau.Sql.Library.StringExtensions.ReplaceSingleQuote(System.String)">
+            <summary>
+            Replaces a single quote to a double single quote.
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
